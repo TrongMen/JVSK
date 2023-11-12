@@ -1,5 +1,9 @@
 package gui;
 
-public class Pnl_PhanCong {
+import javax.swing.*;
 
+public class Pnl_PhanCong extends JPanel{
+	public Pnl_PhanCong() {
+		
+	}
 }
