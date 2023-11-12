@@ -1,11 +1,9 @@
 package gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 
 import javaswingdev.*;
 public class Frm_TrangChu extends JFrame{
@@ -18,9 +16,7 @@ public class Frm_TrangChu extends JFrame{
 		initComponents();
 		setSize(1920, 1080);
         setLocationRelativeTo(null);
-        add( pnlCen = new JPanel(),BorderLayout.CENTER);
-        pnlCen.setLayout(new BorderLayout());
-        pnlCen.add(pnlTrangChu = new JPanel(), BorderLayout.CENTER);
+        
         
         GradientDropdownMenu menu = new GradientDropdownMenu();
         menu.setFont(new Font("Segoe UI", Font.BOLD, 20));
@@ -33,7 +29,10 @@ public class Frm_TrangChu extends JFrame{
         menu.addItem("Phòng ban","Quản lý phòng ban");
         menu.addItem("Báo cáo", "Báo cáo ngày công", "Báo cáo công trình");
         menu.applay(this);
-        
+        pnlCen = new JPanel();
+        pnlCen.setLayout(new BorderLayout());
+        pnlCen.add(Pnl_PhanCong, BorderLayout.CENTER);
+        add( pnlCen,BorderLayout.CENTER);
         menu.addEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex, boolean menuItem) {
@@ -49,7 +48,7 @@ public class Frm_TrangChu extends JFrame{
 				}
 			}
 		});
-        
+       
 	}
 	
 	public static void main(String[] args) {
