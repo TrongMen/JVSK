@@ -17,10 +17,10 @@ import java.awt.FlowLayout;
 
 public class Pnl_PhanCong extends JPanel implements ActionListener, MouseListener {
 	private JLabel lblHeader;
-	private Box pnlNor, b, b1, b2, b3, b4;
+	private Box pnlNor, b, b1, b2, b3, b4,b5,b6;
 	private JPanel pnlHeader;
 	private JPanel pnlCen;
-	private JPanel pnlTop;
+	private JPanel pnlA,pnlC;
 	private JLabel lblMaCT;
 	private JTextField txtMaCT;
 	private JLabel lblMaNV;
@@ -28,7 +28,7 @@ public class Pnl_PhanCong extends JPanel implements ActionListener, MouseListene
 	private JLabel lblNgay;
 	private JTextField txtNgay;
 	private JPanel pnlTop1;
-	private JPanel pnlBot;
+	private JPanel pnlB;
 	private JButton btnThem;
 	private JButton btnSua;
 	private JButton btnXoa;
@@ -41,6 +41,10 @@ public class Pnl_PhanCong extends JPanel implements ActionListener, MouseListene
 	private Component horizontal = Box.createHorizontalStrut(60);
 	private Component horizontal1 = Box.createHorizontalStrut(60);
 	private Component horizontal2 = Box.createHorizontalStrut(60);
+	private JLabel lblTenCT;
+	private JLabel lblTenNV;
+	private JTextField txtTenCT;
+	private JTextField txtTenNV;
 	public Pnl_PhanCong() {
 		//set thuôc tính cho Panel
 		setBackground(Color.WHITE);
@@ -74,36 +78,47 @@ public class Pnl_PhanCong extends JPanel implements ActionListener, MouseListene
 
 		pnlCen.add(b = Box.createVerticalBox(), BorderLayout.NORTH);
 
-		b.add(pnlTop = new JPanel());
-		pnlTop.add(b1 = Box.createHorizontalBox());
+		b.add(pnlA = new JPanel());
+		pnlA.add(b1 = Box.createHorizontalBox());
 		b1.add(lblMaCT = new JLabel("Mã công trình:"));
 		lblMaCT.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		b1.add(txtMaCT = new JTextField(20));
 		b1.add(Box.createHorizontalStrut(20));
-
-		pnlTop.add(b2 = Box.createHorizontalBox());
+		pnlA.add(b2 = Box.createHorizontalBox());
 		b2.add(lblMaNV = new JLabel("Mã nhân viên:"));
 		lblMaNV.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		b2.add(txtMaNV = new JTextField(20));
 		b2.add(Box.createHorizontalStrut(20));
-
-		pnlTop.add(b3 = Box.createHorizontalBox());
+		pnlA.add(b3 = Box.createHorizontalBox());
 		b3.add(lblNgay = new JLabel("Số ngày công:"));
 		lblNgay.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		b3.add(txtNgay = new JTextField(20));
-
-		b.add(pnlBot = new JPanel());
 		
-		pnlBot.add(btnSua = new JButton("Sửa"));
+		b.add(pnlC = new JPanel());
+		pnlC.add(b4 = Box.createHorizontalBox());
+		b4.add(lblTenCT = new JLabel("Tên công trình:"));
+		lblTenCT.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		b4.add(txtTenCT = new JTextField(40));
+		txtTenCT.setEditable(false);
+		b4.add(Box.createHorizontalStrut(20));
+		pnlC.add(b5 = Box.createHorizontalBox());
+		b5.add(lblTenNV = new JLabel("Tên Nhân Viên:"));
+		lblTenNV.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		b5.add(txtTenNV = new JTextField(40));
+		txtTenNV.setEditable(false);
+		
+		
+		b.add(pnlB = new JPanel());
+		pnlB.add(btnSua = new JButton("Sửa"));
 		btnSua.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		pnlBot.add(horizontal);
-		pnlBot.add(btnThem = new JButton("Thêm"));
+		pnlB.add(horizontal);
+		pnlB.add(btnThem = new JButton("Thêm"));
 		btnThem.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		pnlBot.add(horizontal1);
-		pnlBot.add(btnXoa = new JButton("Xóa"));
+		pnlB.add(horizontal1);
+		pnlB.add(btnXoa = new JButton("Xóa"));
 		btnXoa.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		pnlBot.add(horizontal2);
-		pnlBot.add(btnTim = new JButton("Tìm"));
+		pnlB.add(horizontal2);
+		pnlB.add(btnTim = new JButton("Tìm"));
 		btnTim.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		
 		//Tạo Table
