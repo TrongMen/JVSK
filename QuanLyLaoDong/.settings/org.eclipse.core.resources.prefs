@@ -1,3 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/entity/NhanVien.java=UTF-8
 encoding//src/gui/Frm_TrangChu.java=UTF-8
+encoding//src/gui/Pn_QLCT.java=UTF-8
+encoding//src/gui/Pn_QLPB.java=UTF-8
+encoding//src/gui/Pnl_BaoCaoCongTrinh.java=UTF-8
 encoding//src/gui/Pnl_PhanCong.java=UTF-8
+encoding//src/gui/Pnl_QuanLyNhanVien.java=UTF-8

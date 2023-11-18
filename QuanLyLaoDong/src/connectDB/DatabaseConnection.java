@@ -30,5 +30,15 @@ public class DatabaseConnection {
 		return cnt;
 	}
 	
+	public void disconnect() {
+		if(cnt != null) {
+			try {
+				cnt.close();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+	}
 
 }
